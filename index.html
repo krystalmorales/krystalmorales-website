@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+<html lang="en" data-theme="lofi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</body>
+    <title>Krystal's Website</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css"/>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		  const themeToggle = document.querySelector('.theme-toggle');
+  
+		  themeToggle.addEventListener('change', (e) => {
+			const newTheme = e.target.checked ? 'synthwave' : 'lofi'; 
+			document.documentElement.setAttribute('data-theme', newTheme); 
+		  });
+		});
+	  </script>
+  </head>
+
+  <body class="min-h-screen flex flex-col items-center justify-center text-neutral-content">
+
+    <!-- Header Section with Cyberpunk Style -->
+    <header class="flex items-center justify-center space-x-12 p-12 border-b-4 border-black border-accent">
+      
+      <!-- Description (Left) -->
+      <div class="flex-1 text-left">
+        <p class="text-xl text-accent">In 2022, I transitioned from studying International Relations and Latin America to become a software developer. Explore my page to learn more about my journey.</p>
+      </div>
+      
+      <!-- Image (Center, Larger) -->
+      <div class="flex-shrink-0">
+        <img src="Krystal.jpg" alt="Me standing in front of a pink Bougainvillea bush" class="w-80 h-80 rounded-full object-cover shadow-2xl">
+      </div>
+      
+      <!-- Name and Title (Right) -->
+      <div class="flex-1 text-left">
+        <h1 class="text-5xl font-extrabold text-primary">Hello, I'm Krystal</h1>
+        <h2 class="text-3xl font-semibold text-secondary">Software Developer</h2>
+      </div>
+    </header>
+
+	<div class="flex- justify-center mb-8">
+		<label class="label cursor-pointer">
+			<input type="checkbox" value="black" class="toggle theme-toggle" />
+		</label>
+	</div>
+
+    <!-- Links to Profiles and Resume with Cyberpunk Buttons -->
+    <section class="mt-8">
+      <ul class="flex space-x-4">
+		<li><a href="#" class="btn btn-outline btn-accent">Home</a></li>
+		<li><a href="about.html" class="btn btn-outline btn-accent">About Me</a></li>
+        <li><a href="Krystal_Morales_Resume.pdf" target="_blank" class="btn btn-outline btn-accent">Resume</a></li>
+        <li><a href="https://www.linkedin.com/in/krymorale/" target="_blank" class="btn btn-outline btn-accent">LinkedIn</a></li>
+        <li><a href="https://github.com/krystalmorales" target="_blank" class="btn btn-outline btn-accent">GitHub</a></li>
+        <li><a href="#" class="btn btn-outline btn-accent">Coding Projects</a></li>
+      </ul>
+    </section>
+
+  </body>
 </html>
+
