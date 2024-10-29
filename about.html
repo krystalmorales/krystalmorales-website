@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="lofi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <style>
+        .carousel-item {
+          display: none; /* Hide all carousel items by default */
+        }
+        .carousel-item.active {
+          display: block; /* Show only the active carousel item */
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-item {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        .dropdown-item:hover {
+            background-color: #f1f1f1; /* Change background on hover */
+        }
+      </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center">
+    <header class="flex items-center justify-center space-x-12 p-8 border-b-4 border-accent">
+        <h1 class="text-5xl font-extrabold text-primary">Hello, I'm Krystal</h1>
+
+        <div class="dropdown dropdown-hover">
+            <div tabindex="0" role="button" class="btn m-1">Menu</div>
+            <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="Krystal_Morales_Resume.pdf">Resume</a></li>
+              <li><a href="https://www.linkedin.com/in/krymorale/" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/krystalmorales" target="_blank">GitHub</a></li>
+              <li><a href="codingprojects.html">Coding Projects</a></li>
+            </ul>
+        </div>
+        <div class="flex- justify-center ml-8"> 
+            <label class="label cursor-pointer">
+              <input type="checkbox" class="toggle theme-toggle" /> 
+            </label>
+          </div> 
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.querySelector('.theme-toggle');
+            const currentTheme = localStorage.getItem('theme') || 'lofi'; // Get saved theme or default
+
+            document.documentElement.setAttribute('data-theme', currentTheme); // Set initial theme
+            themeToggle.checked = currentTheme === 'synthwave'; // Set toggle state
+
+            themeToggle.addEventListener('change', (e) => {
+                const newTheme = e.target.checked ? 'synthwave' : 'lofi';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme); // Save theme preference
+            });
+        });
+    </script>
+
+    <main class="mt-8 max-w-2xl mx-auto space-y-4">
+        <p class="text-base leading-relaxed">Over the past decade, I've had the incredible opportunity to explore the world, immersing myself in diverse cultures and connecting with people from all walks of life. My passion for learning and discovery led me to study abroad in Geneva and Mexico City during my undergraduate years, and later, a Tinker Field Research grant allowed me to conduct research in Peru during the summer of 2019.</p>
+        <p class="text-base leading-relaxed">Eager to apply my academic knowledge and skills in a practical setting, I joined Genesis10 where I earned a full-stack Java developer certificate. This experience provided me with a solid foundation in software development and further ignited my interest in the field.</p>
+
+        <p class="text-base leading-relaxed">To deepen my expertise, I pursued a post-baccalaureate degree in computer science at Tufts University, which I completed in 2024.  I'm now excited to leverage my diverse experiences and technical skills to contribute to the tech indistry.</p>
+
+        <p class="text-center text-accent"> Enjoy some pictures from my travels:</p>
+    </main>
+  
+    <div class="flex justify-center mt-8">
+        <div class="carousel w-full max-w-2xl"> <!-- Set a max width to limit carousel size -->
+            <div id="slide1" class="carousel-item active relative w-full">
+                <img src="elpaso.jpeg" class="w-90 h-90 object-cover" alt="El Paso" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide12" class="btn btn-circle">❮</a> 
+                    <a href="#slide2" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-white text-xs">Scenic Drive, where the urban sprawl of the sister cities Ciudad Juarez and El Paso is a must-see.</p>
+                    </div>
+                </div>
+            </div> 
+
+            <div id="slide2" class="carousel-item relative w-full">
+                <img src="bellas artes, cdmx.jpg" class="w-90 h-90 object-cover" alt="Mexico City" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" class="btn btn-circle">❮</a> 
+                    <a href="#slide3" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-sm">Overlooking the Palacio de Bellas Artes in Mexico City from the Sears Tower.</p>
+                    </div>
+                </div>
+            </div> 
+
+            <div id="slide3" class="carousel-item relative w-full">
+                <img src="santabarrbara.JPG" class="w-90 h-90 object-cover" alt="Santa Barbarra" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" class="btn btn-circle">❮</a> 
+                    <a href="#slide4" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-sm">Overlooking the growing town of Santa Barbarra, Chihuahua, Mexico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide4" class="carousel-item relative w-full">
+                <img src="merida.jpg" class="w-90 h-90 object-cover" alt="Merida" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" class="btn btn-circle">❮</a> 
+                    <a href="#slide5" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-sm">Sunset at Plaza Grande, Merida, Yucatan, Mexico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide5" class="carousel-item relative w-full">
+                <img src="xochimilco.jpg" class="w-90 h-90 object-cover" alt="Xochimilco" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" class="btn btn-circle">❮</a> 
+                    <a href="#slide6" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-sm">Dozens of trajineras in Xochimilco, Mexico City.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide6" class="carousel-item relative w-full">
+                <img src="piramide de la luna.jpg" class="w-90 h-90 object-cover" alt="Teotihuacan" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide5" class="btn btn-circle">❮</a> 
+                    <a href="#slide7" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-xs">Piramide de la Luna in Teotihuacan, Mexico, where visitors are no longer permitted to climb.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide7" class="carousel-item relative w-full">
+                <img src="plaza13marzo.jpeg" class="w-90 h-90 object-cover" alt="Cuba" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide6" class="btn btn-circle">❮</a> 
+                    <a href="#slide8" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-sm">Plaza 13 de marzo, La Habana, Cuba.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide8" class="carousel-item relative w-full">
+                <img src="machupicu.jpeg" class="w-90 h-90 object-cover" alt="Machu Picchu" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide7" class="btn btn-circle">❮</a> 
+                    <a href="#slide10" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-sm">Machu Picchu, Peru.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide10" class="carousel-item relative w-full">
+                <img src="cuzco.jpeg" class="w-90 h-90 object-cover" alt="Plaza de Armas, Cuzco" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide8" class="btn btn-circle">❮</a> 
+                    <a href="#slide11" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-sm">Drinking coffee overlooking the Plaza de Armas, Cuzco, Peru.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide11" class="carousel-item relative w-full">
+                <img src="oregon coast.jpg" class="w-90 h-90 object-cover" alt="Oregon coast" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide10" class="btn btn-circle">❮</a> 
+                    <a href="#slide12" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-black text-xs">The serene white sands of the beach contrast dramatically with the cloud-covered peak of Neahkahnie Mountain, Oregon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide12" class="carousel-item relative w-full">
+                <img src="seattle.jpg" class="w-90 h-90 object-cover" alt="Seattle" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide11" class="btn btn-circle">❮</a> 
+                    <a href="#slide1" class="btn btn-circle">❯</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                        <p class="text-white text-xs">Exploring Seattle, Washington with my younger sister and boyfriend.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+      <script>
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const carouselButtons = document.querySelectorAll('.carousel .btn');
+      
+        carouselButtons.forEach(button => {
+          button.addEventListener('click',   
+       (event) => {
+            event.preventDefault(); // Prevent default link behavior
+      
+            const currentItem = document.querySelector('.carousel-item.active');
+            currentItem.classList.remove('active');
+      
+            const targetId = button.getAttribute('href');
+            const targetItem = document.querySelector(targetId);
+            targetItem.classList.add('active');
+          });
+        });
+        function navigateTo(slideId) {
+            const currentItem = document.querySelector('.carousel-item.active');
+            currentItem.classList.remove('active');
+            const targetItem = document.querySelector(slideId);
+            targetItem.classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+		  const themeToggle = document.querySelector('.theme-toggle');
+  
+		  themeToggle.addEventListener('change', (e) => {
+			const newTheme = e.target.checked ? 'synthwave' : 'lofi'; 
+			document.documentElement.setAttribute('data-theme', newTheme); 
+		  });
+		});
+    </script>
+
+</body>
+</html>

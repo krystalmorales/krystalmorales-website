@@ -10,20 +10,24 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
-		  const themeToggle = document.querySelector('.theme-toggle');
-  
-		  themeToggle.addEventListener('change', (e) => {
-			const newTheme = e.target.checked ? 'synthwave' : 'lofi'; 
-			document.documentElement.setAttribute('data-theme', newTheme); 
-		  });
-		});
+            const themeToggle = document.querySelector('.theme-toggle');
+            const currentTheme = localStorage.getItem('theme') || 'lofi'; // Get saved theme or default
+
+            document.documentElement.setAttribute('data-theme', currentTheme); // Set initial theme
+            themeToggle.checked = currentTheme === 'synthwave'; // Set toggle state
+
+            themeToggle.addEventListener('change', (e) => {
+                const newTheme = e.target.checked ? 'synthwave' : 'lofi';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme); // Save theme preference
+            });
+        });
 	  </script>
   </head>
 
   <body class="min-h-screen flex flex-col items-center justify-center text-neutral-content">
 
-    <!-- Header Section with Cyberpunk Style -->
-    <header class="flex items-center justify-center space-x-12 p-12 border-b-4 border-black border-accent">
+    <header class="flex items-center justify-center space-x-12 p-12 border-b-4 border-accent">
       
       <!-- Description (Left) -->
       <div class="flex-1 text-left">
@@ -32,12 +36,12 @@
       
       <!-- Image (Center, Larger) -->
       <div class="flex-shrink-0">
-        <img src="Krystal.jpg" alt="Me standing in front of a pink Bougainvillea bush" class="w-80 h-80 rounded-full object-cover shadow-2xl">
+        <img src="Krystal.jpg" alt="Krystal standing in front of a pink Bougainvillea bush" class="w-80 h-80 rounded-full object-cover shadow-2xl">
       </div>
       
       <!-- Name and Title (Right) -->
       <div class="flex-1 text-left">
-        <h1 class="text-5xl font-extrabold text-primary">Hello, I'm Krystal</h1>
+        <h1 class="text-5xl font-extrabold text-primary">Krystal Morales</h1>
         <h2 class="text-3xl font-semibold text-secondary">Software Developer</h2>
       </div>
     </header>
@@ -48,15 +52,14 @@
 		</label>
 	</div>
 
-    <!-- Links to Profiles and Resume with Cyberpunk Buttons -->
     <section class="mt-8">
       <ul class="flex space-x-4">
-		<li><a href="#" class="btn btn-outline btn-accent">Home</a></li>
+		<li><a href="index.html" class="btn btn-outline btn-accent">Home</a></li>
 		<li><a href="about.html" class="btn btn-outline btn-accent">About Me</a></li>
-        <li><a href="Krystal_Morales_Resume.pdf" target="_blank" class="btn btn-outline btn-accent">Resume</a></li>
+        <li><a href="Krystal_Morales_Resume.pdf" class="btn btn-outline btn-accent">Resume</a></li>
         <li><a href="https://www.linkedin.com/in/krymorale/" target="_blank" class="btn btn-outline btn-accent">LinkedIn</a></li>
         <li><a href="https://github.com/krystalmorales" target="_blank" class="btn btn-outline btn-accent">GitHub</a></li>
-        <li><a href="#" class="btn btn-outline btn-accent">Coding Projects</a></li>
+        <li><a href="codingprojects.html" class="btn btn-outline btn-accent">Coding Projects</a></li>
       </ul>
     </section>
 

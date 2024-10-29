@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="lofi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center">
+    <header class="flex items-center justify-center space-x-12 p-8 border-b-4 border-accent">
+        <h1 class="text-5xl font-extrabold text-primary">Coding Projects</h1>
+        <button class="btn">
+            <span class="loading loading-spinner"></span>
+            under construction
+          </button>
+
+          <div class="dropdown dropdown-hover">
+            <div tabindex="0" role="button" class="btn m-1">Menu</div>
+            <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="Krystal_Morales_Resume.pdf">Resume</a></li>
+              <li><a href="https://www.linkedin.com/in/krymorale/" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/krystalmorales" target="_blank">GitHub</a></li>
+              <li><a href="codingprojects.html">Coding Projects</a></li>
+            </ul>
+        </div>
+
+          <div class="flex- justify-center ml-8"> 
+            <label class="label cursor-pointer">
+              <input type="checkbox" class="toggle theme-toggle" /> 
+            </label>
+          </div> 
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.querySelector('.theme-toggle');
+            const currentTheme = localStorage.getItem('theme') || 'lofi'; // Get saved theme or default
+
+            document.documentElement.setAttribute('data-theme', currentTheme); // Set initial theme
+            themeToggle.checked = currentTheme === 'synthwave'; // Set toggle state
+
+            themeToggle.addEventListener('change', (e) => {
+                const newTheme = e.target.checked ? 'synthwave' : 'lofi';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme); // Save theme preference
+            });
+        });
+    </script>
+
+    <main>
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row">
+              <img
+                src="GIS-Internship-Flyer.jpg"
+                class="max-w-sm rounded-lg shadow-2xl" />
+              <div>
+                <h1 class="text-5xl font-bold">Finding Wildlife</h1>
+                <p class="py-6">
+                    In collaboration with Shreya Menon and Mason Spalding, we developed "Finding Wildlife," a dynamic web application designed for nature enthusiasts and US National Park explorers. Our platform empowers users to create accounts, share trail and park reviews, and document animal sightings with precise location pinning using an integrated map API.
+                    While I work on making "Finding Wildlife" live, enjoy this video of our project presentation:
+                  <a class="link link-info" href="https://youtu.be/DHEyDUM4kfI" target="_blank"> Dev10 Final Project Presentation: Finding Wildlife</a>
+                </p>  
+                <!--
+                <button class="btn btn-primary">Get Started</button>
+                -->
+              </div>
+            </div>
+          </div>
+    </main>
+
+</body>
+</html>
